@@ -1,0 +1,270 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">baas.io</string>
+    
+    <!-- 화면 제목 -->
+    <string name="title_activity_baas_sample">baas.io 샘플</string>
+    <string name="title_activity_facebook_sample">Facebook</string>
+    <string name="title_activity_userdeail">사용자 상세보기</string>
+    <string name="title_activity_userdeail_list">사용자 상세리스트 보기</string>
+    <string name="title_activity_signup">가입</string>
+    <string name="title_activity_signin">로그인</string>
+    <string name="title_activity_user_for_group">\'<xliff:g id="path">%s</xliff:g>\' 그룹멤버</string>
+    <string name="title_activity_add_user">멤버 추가</string>
+    <string name="title_activity_postdetail">게시글 상세보기</string>
+    
+    <!-- 로그인/가입 -->
+    <string name="content_description_baasio_logo">baas.io</string>
+    
+    <string name="error_invalid_email">이메일 주소를 확인해주세요.</string>
+    <string name="error_invalid_name">이름을 확인해주세요.</string>
+    <string name="error_invalid_password">비밀번호를 확인해주세요.</string>
+    <string name="error_invalid_grant">이메일 주소 또는 비밀번호를 확인해주세요.</string>
+    <string name="error_already_exist">이미 가입된 사용자입니다.</string>
+    
+    <string name="error_signin_facebook">Facebook 로그인에 실패하였습니다.</string>
+    <string name="error_signup_facebook">Facebook 가입에 실패하였습니다.</string>
+    
+    <string name="msg_signin_success">로그인 되었습니다.</string>
+    <string name="msg_signup_success">가입에 성공하셨습니다.</string>
+    
+    <string name="hint_email">이메일 주소</string>
+    <string name="hint_password">비밀번호</string>
+    <string name="hint_password_verify">비밀번호 확인</string>
+    <string name="hint_name">이름</string>
+    <string name="label_signup_via_facebook">Facebook으로 가입하기</string>
+    <string name="label_signin_via_facebook">Facebook으로 로그인하기</string>
+    <string name="label_need_signup">아이디가 없으신가요?</string>
+    <string name="label_already_signuped">이미 가입하셨나요?</string>
+    
+    <!-- 메인화면 -->
+    <string name="title_user">사용자</string>
+    <string name="title_group">그룹</string>
+    <string name="title_post">게시판</string>
+    <string name="title_push">푸시정보</string>
+    <string name="title_file">파일</string>
+    
+    <!-- 사용자 -->
+    <string name="created_time_user"><xliff:g id="time">%s</xliff:g>에 가입</string>
+    <string name="modified_time_user"><xliff:g id="time">%s</xliff:g>에 수정</string>
+    
+    <!-- 사용자 상세보기 -->
+    <string name="content_description_profile_image">프로파일 이미지</string>
+    
+    <!-- 그룹 -->
+    <string name="created_time_group"><xliff:g id="time">%s</xliff:g>에 생성</string>
+    <string name="modified_time_group"><xliff:g id="time">%s</xliff:g>에 수정</string>
+    
+    <!-- 게시판 -->
+    <string name="created_time_post"><xliff:g id="time">%s</xliff:g>에 작성</string>
+    <string name="modified_time_post"><xliff:g id="time">%s</xliff:g>에 수정</string>
+    
+    <string name="created_time_comment"><xliff:g id="time">%s</xliff:g>에 작성</string>
+    <string name="modified_time_comment"><xliff:g id="time">%s</xliff:g>에 수정</string>
+    
+    <!-- 게시글 상세보기 -->
+    <string name="content_description_separator">구분선</string>
+    <string name="content_description_comment_reply">댓글</string>
+    
+    <!-- 푸쉬 -->
+    <string name="label_signin_status">로그인 상태:</string>
+    <string name="label_regid">등록된 regId:</string>
+    <string name="label_device_uuid">등록된 장치 uuid:</string>
+    <string name="label_tags">Tags:</string>
+    <string name="label_device_update">업데이트</string>
+    
+    <string name="status_signin">로그인되어 있음.</string>
+    <string name="status_signout">로그아웃되어 있음.</string>
+    
+    <string name="hint_tags">콤마(,)로 구분됩니다.</string>
+    
+    <!-- 파일 -->
+    <string name="quota_size">전체 용량: <xliff:g id="quota">%s</xliff:g><xliff:g id="unit">%s</xliff:g></string>
+    <string name="created_time_file"><xliff:g id="time">%s</xliff:g>에 생성</string>
+    <string name="modified_time_file"><xliff:g id="time">%s</xliff:g>에 수정</string>
+    
+    <string name="content_description_folder">폴더</string>
+    <string name="content_description_file">파일</string>
+    
+    <!-- 메뉴 - 공통 -->
+    <string name="menu_settings">환경설정</string>
+    <string name="menu_helpdesk">고객센터</string>
+    <string name="menu_signout">로그아웃</string>
+    <string name="menu_signin">로그인</string>
+    
+    <!-- 메뉴 - 사용자 리스트 -->
+    <string name="menu_push_send">푸시 전송</string>
+    
+    <string name="menu_userdetail">사용자 상세보기</string>
+    <string name="menu_userdetail_list">사용자 상세 리스트보기</string>
+    
+    <!-- 메뉴 - 사용자 상세보기 -->
+    <string name="menu_user_prev">이전</string>
+    <string name="menu_user_next">다음</string>
+    
+    <string name="label_facebook_information">Facebook Information</string>
+    
+    <!-- 메뉴 - 그룹 리스트 -->
+    <string name="menu_group_create">그룹 생성</string>
+    <string name="menu_group_delete">그룹 삭제</string>
+    <string name="menu_group_modify">그룹 수정</string>
+    
+    <!-- 메뉴 - 그룹 멤버 리스트 -->
+    <string name="menu_add_user">멤버 추가</string>
+    <string name="menu_remove_user">멤버 삭제</string>
+    
+    <!-- 메뉴 - 푸시정보 -->
+    <string name="menu_push_register">장치등록</string>
+    <string name="menu_push_unregister">장치등록 해제</string>
+    <string name="menu_push_getinfo">장치등록 정보 가져오기</string>
+    
+    <string name="msg_register_success">장치등록에 성공하였습니다.</string>
+    <string name="msg_register_fail">장치등록에 실패하였습니다.</string>
+    
+    <string name="msg_unregister_success">장치등록 해제에 성공하였습니다.</string>
+    <string name="msg_unregister_fail">장치등록 해제에 실패하였습니다.</string>
+    
+    <string name="msg_getinfo_success">장치 정보 가져오기가 성공하였습니다.</string>
+    <string name="msg_getinfo_fail">장치 정보 가져오기가 실패하였습니다.</string>
+    
+    <string name="msg_update_info_success">장치 정보 수정에 성공하였습니다.</string>
+    <string name="msg_update_info_fail">장치 정보 수정에 실패하였습니다.</string>
+    
+    <!-- 메뉴 - 게시글 리스트 -->
+    <string name="menu_post_create">게시글 쓰기</string>
+    <string name="menu_post_modify">게시글 수정</string>
+    <string name="menu_post_delete">게시글 삭제</string>
+    
+    <!-- 메뉴 - 게시글 상세보기 -->
+    <string name="menu_comment_create">댓글 쓰기</string>
+    <string name="menu_comment_modify">댓글 수정</string>
+    <string name="menu_comment_delete">댓글 삭제</string>
+    
+    <!-- 메뉴 - 파일 리스트 -->
+    <string name="menu_file_create">파일 생성</string>
+    <string name="menu_file_update">파일 수정</string>
+    <string name="menu_file_delete">파일 삭제</string>
+    
+    <!-- 고객센터 -->
+    <string name="title_help">도움말</string>
+    <string name="title_qna">문의내역</string>
+    <string name="title_send_question">문의하기</string>
+    <string name="title_search_faqs">\'<xliff:g id="query">%s</xliff:g>\'의 검색결과</string>
+    
+    <!-- 고객센터 - 메인 -->
+    <string name="title_activity_help">고객센터</string>
+    <string name="title_activity_send_question">문의하기</string>
+    <string name="title_activity_qna_detail">문의내역</string>
+    
+    <!-- 고객센터 - 도움말 -->
+    <string name="content_description_faq">도움말</string>
+    <string name="content_description_open">도움말 그룹 열기</string>
+    <string name="content_description_close">도움말 그룹 닫기</string>
+    
+    <!-- 고객센터 - 도움말 상세보기 -->
+    <string name="label_question">Q.</string>
+    <string name="label_answer">A.</string>
+    
+    <!-- 고객센터 - 도움말 검색 -->
+    <string name="label_search_faq">도움말 검색</string>
+    <string name="hint_search_faq">검색할 단어</string>
+    
+    <!-- 고객센터 - 문의하기 -->
+    <string name="error_empty_question">문의할 내용을 입력해주세요.</string>
+    
+    <string name="hint_send_question_email">답변받을 이메일주소를 입력하세요.</string>
+    <string name="hint_send_question_body">문의 내용을 입력하세요.</string>
+    
+    <string name="label_send_question_info">* 정확한 답변을 위해 모바일 정보(Device, OS)와 이메일 주소가 저장됩니다.</string>
+    <string name="label_question_post">문의하기</string>
+    
+    <string name="label_question_post_title">문의하기</string>
+    <string name="label_question_post_body">질문을 등록하시겠습니까?</string>
+    <string name="label_question_posting">등록중입니다.</string>
+    
+    <string name="label_question_post_fail_title">등록실패</string>
+    <string name="label_question_post_fail_body">질문 등록에 실패하였습니다.\n잠시후 다시 시도해 보세요.</string>
+    
+    <string name="msg_send_question_success">고객님의 문의가 접수되었습니다.\n\n\n접수 일시:\n<xliff:g id="time">%s</xliff:g>\n\n접수된 이메일:\n<xliff:g id="email">%s</xliff:g></string>
+    
+    <!-- 고객센터 - 문의내역 -->
+    <string name="posted_time_qna"><xliff:g id="time">%s</xliff:g>에 질문 접수</string>
+    
+    <string name="label_expand">More&#8230;</string>
+    <string name="label_fold">Fold&#8230;</string>
+    
+    <string name="content_description_more">더보기</string>
+    <string name="content_description_new_qna">새로운 항목</string>
+    
+    <!-- 고객센터 - 문의 상세보기 -->
+    <string name="label_qna_detail_email">답변 받을 이메일: <xliff:g id="email">%s</xliff:g></string>
+    <string name="label_qna_detail_time">접수된 시간: <xliff:g id="time">%s</xliff:g></string>
+    <string name="label_qna_detail_deviceinfo">단말 정보: <xliff:g id="device">%s</xliff:g></string>
+    <string name="label_qna_detail_osinfo">OS 정보: <xliff:g id="os">%s</xliff:g></string>
+    <string name="label_qna_detail_appversion">앱 버전 정보: <xliff:g id="appversion">%s</xliff:g></string>
+    <string name="label_qna_detail_information">Detail information</string>
+    
+    <string name="content_description_qna_detail_reply">답변</string>
+        
+    <!-- 고객센터 - 메뉴 -->
+    <string name="menu_faq_search">Search in FAQ</string>
+    
+    <!-- 공통 -->
+    <string name="label_confirm">확인</string>
+    <string name="label_loading">로딩중입니다&#8230;</string>
+    
+    <!-- 공통 -->
+    <string name="msg_need_login">로그인이 필요합니다.</string>
+    
+    <!-- 공통 - pull to refresh list -->
+    <string name="pull_to_refresh_pull_label">Pull down to refresh…</string>
+    <string name="pull_to_refresh_release_label">Release to refresh</string>
+    <string name="pull_to_refresh_loading">Loading&#8230;</string>
+    <string name="content_description_pull_to_refresh">당기면 갱신됩니다.</string>
+    
+    <!-- 공통 - 리스트 내용 없음 -->
+    <string name="empty_user_list">가입된 유저가 없습니다.</string>
+    <string name="empty_group_list">그룹이 없습니다. 메뉴를 눌러 그룹을 만들어보세요.</string>
+    <string name="empty_group_user_list">그룹에 가입된 유저가 없습니다. 메뉴를 눌러 유저를 추가해보세요.</string>
+    <string name="empty_post_list">게시글이 없습니다. 메뉴를 눌러 게시글을 남겨보세요.</string>
+    <string name="empty_comment_list">댓글이 없습니다. 메뉴를 눌러 댓글을 달아보세요.</string>
+    <string name="empty_file_list">업로드된 파일이 없습니다. 메뉴를 눌어 파일을 업로드 해보세요.</string>
+    <string name="empty_search_faq_list">검색된 도움말이 없습니다. 질문하실 내용이 있으시다면 문의하기를 해주세요.</string>
+    <string name="empty_qna_list">질문 내용이 없습니다. 질문하실 내용이 있으시다면 메뉴에서 질문을 보내주세요.</string>
+    <string name="empty_answer_list">확인중에 있습니다. 메일로 회신드리겠습니다.</string>
+    
+    <!-- 공통 - 다이얼로그 -->
+    <string name="common_dialog_confirm">확인</string>
+    <string name="common_dialog_cancel">취소</string>
+    
+    <string name="share_dialog_title">공유하기</string>
+    <string name="share_dialog_title_twitter">트위터로 공유</string>
+    <string name="share_dialog_title_facebook">페이스북으로 공유</string>
+    <string name="share_dialog_body_hint">공유할 내용을 입력하세요.</string>
+    <string name="share_dialog_post">공유</string>
+    
+    <string name="progress_dialog_loading">잠시만 기다려주세요.</string>
+    
+    <string name="sendpush_dialog_title">Push 보내기</string>
+    
+    <string name="hint_sendpush_dialog_text1">메시지를 입력하세요.</string>
+    <string name="hint_sendpush_dialog_text2">태그를 입력하세요.(콤마로구분)</string>
+    
+    <string name="label_ios_platform">iOS</string>
+    <string name="label_android_platform">Android</string>
+    
+    <string name="create_group_dialog_title">그룹 생성</string>
+    <string name="modify_group_dialog_title">그룹 수정</string>
+    
+    <string name="hint_group_dialog_text1">그룹 이름을 입력하세요.</string>
+    
+    <string name="create_post_dialog_title">게시글 쓰기</string>
+    <string name="modify_post_dialog_title">게시글 수정</string>
+    
+    <string name="create_comment_dialog_title">댓글 쓰기</string>
+    <string name="modify_comment_dialog_title">댓글 수정</string>
+    
+    <string name="hint_comment_dialog_text1">댓글을 입력하세요.</string>
+    
+    <string name="hint_post_dialog_text1">제목을 입력하세요.</string>
+    <string name="hint_post_dialog_text2">게시글을 입력하세요.</string>
+</resources>

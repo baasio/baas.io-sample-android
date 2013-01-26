@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_user_prev"
+        android:title="@string/menu_user_prev"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/menu_user_next"
+        android:title="@string/menu_user_next"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText" />
+</menu>
