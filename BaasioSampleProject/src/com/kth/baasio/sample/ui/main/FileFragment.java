@@ -574,21 +574,15 @@ public class FileFragment extends SherlockFragment implements OnRefreshListener,
 
                 view.mSize.setVisibility(View.VISIBLE);
 
-                JsonNode sizeNode = entity.getProperties().get("content-length");
-                view.mSize.setText(sizeNode.getLongValue() + " bytes");
+                if(!ObjectUtils.isEmpty(entity.getSize())) {
+                	view.mSize.setText(entity.getSize() + " bytes");
+                }
 
                 view.mLowerLayout.setVisibility(View.VISIBLE);
 
-                // String filename = entity.getFilename();
-                // String result = "";
-                // try {
-                // result = URLDecoder.decode(filename, "UTF-8");
-                // } catch (UnsupportedEncodingException e) {
-                // // TODO Auto-generated catch block
-                // e.printStackTrace();
-                // }
-
-                view.mName.setText(entity.getFilename());
+                if(!ObjectUtils.isEmpty(entity.getFilename())) {
+                	view.mName.setText(entity.getFilename());
+                }
 
                 if (entity.getCreated() != null) {
                     String createdTime = EtcUtils.getDateString(entity.getCreated());
