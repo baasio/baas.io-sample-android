@@ -713,6 +713,7 @@ public class UserFragment extends SherlockFragment implements OnRefreshListener,
 
                                         BaasioMessage message = new BaasioMessage();
                                         message.setMessage(body, null, null);
+                                        message.setTarget(BaasioMessage.TARGET_TYPE_USER);
                                         message.setTo(userUuid);
 
                                         BaasioPush.sendPushInBackground(message,
