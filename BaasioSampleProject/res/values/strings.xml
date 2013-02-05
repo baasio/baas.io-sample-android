@@ -1,6 +1,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">baas.io</string>
     
+    <!-- Facebook app_id -->
+    <string name="app_id">PUT_YOUR_FACEBOOK_APP_ID</string>
+        
     <!-- 화면 제목 -->
     <string name="title_activity_baas_sample">baas.io 샘플</string>
     <string name="title_activity_facebook_sample">Facebook</string>
@@ -143,76 +146,12 @@
     <string name="menu_file_create">파일 생성</string>
     <string name="menu_file_update">파일 수정</string>
     <string name="menu_file_delete">파일 삭제</string>
-    
-    <!-- 고객센터 -->
-    <string name="title_help">도움말</string>
-    <string name="title_qna">문의내역</string>
-    <string name="title_send_question">문의하기</string>
-    <string name="title_search_faqs">\'<xliff:g id="query">%s</xliff:g>\'의 검색결과</string>
-    
-    <!-- 고객센터 - 메인 -->
-    <string name="title_activity_help">고객센터</string>
-    <string name="title_activity_send_question">문의하기</string>
-    <string name="title_activity_qna_detail">문의내역</string>
-    
-    <!-- 고객센터 - 도움말 -->
-    <string name="content_description_faq">도움말</string>
-    <string name="content_description_open">도움말 그룹 열기</string>
-    <string name="content_description_close">도움말 그룹 닫기</string>
-    
-    <!-- 고객센터 - 도움말 상세보기 -->
-    <string name="label_question">Q.</string>
-    <string name="label_answer">A.</string>
-    
-    <!-- 고객센터 - 도움말 검색 -->
-    <string name="label_search_faq">도움말 검색</string>
-    <string name="hint_search_faq">검색할 단어</string>
-    
-    <!-- 고객센터 - 문의하기 -->
-    <string name="error_empty_question">문의할 내용을 입력해주세요.</string>
-    
-    <string name="hint_send_question_email">답변받을 이메일주소를 입력하세요.</string>
-    <string name="hint_send_question_body">문의 내용을 입력하세요.</string>
-    
-    <string name="label_send_question_info">* 정확한 답변을 위해 모바일 정보(Device, OS)와 이메일 주소가 저장됩니다.</string>
-    <string name="label_question_post">문의하기</string>
-    
-    <string name="label_question_post_title">문의하기</string>
-    <string name="label_question_post_body">질문을 등록하시겠습니까?</string>
-    <string name="label_question_posting">등록중입니다.</string>
-    
-    <string name="label_question_post_fail_title">등록실패</string>
-    <string name="label_question_post_fail_body">질문 등록에 실패하였습니다.\n잠시후 다시 시도해 보세요.</string>
-    
-    <string name="msg_send_question_success">고객님의 문의가 접수되었습니다.\n\n\n접수 일시:\n<xliff:g id="time">%s</xliff:g>\n\n접수된 이메일:\n<xliff:g id="email">%s</xliff:g></string>
-    
-    <!-- 고객센터 - 문의내역 -->
-    <string name="posted_time_qna"><xliff:g id="time">%s</xliff:g>에 질문 접수</string>
-    
+        
+    <!-- 공통 -->
+    <string name="label_confirm">확인</string>
     <string name="label_expand">More&#8230;</string>
     <string name="label_fold">Fold&#8230;</string>
     
-    <string name="content_description_more">더보기</string>
-    <string name="content_description_new_qna">새로운 항목</string>
-    
-    <!-- 고객센터 - 문의 상세보기 -->
-    <string name="label_qna_detail_email">답변 받을 이메일: <xliff:g id="email">%s</xliff:g></string>
-    <string name="label_qna_detail_time">접수된 시간: <xliff:g id="time">%s</xliff:g></string>
-    <string name="label_qna_detail_deviceinfo">단말 정보: <xliff:g id="device">%s</xliff:g></string>
-    <string name="label_qna_detail_osinfo">OS 정보: <xliff:g id="os">%s</xliff:g></string>
-    <string name="label_qna_detail_appversion">앱 버전 정보: <xliff:g id="appversion">%s</xliff:g></string>
-    <string name="label_qna_detail_information">Detail information</string>
-    
-    <string name="content_description_qna_detail_reply">답변</string>
-        
-    <!-- 고객센터 - 메뉴 -->
-    <string name="menu_faq_search">Search in FAQ</string>
-    
-    <!-- 공통 -->
-    <string name="label_confirm">확인</string>
-    <string name="label_loading">로딩중입니다&#8230;</string>
-    
-    <!-- 공통 -->
     <string name="msg_need_login">로그인이 필요합니다.</string>
     
     <!-- 공통 - pull to refresh list -->
@@ -228,9 +167,6 @@
     <string name="empty_post_list">게시글이 없습니다. 메뉴를 눌러 게시글을 남겨보세요.</string>
     <string name="empty_comment_list">댓글이 없습니다. 메뉴를 눌러 댓글을 달아보세요.</string>
     <string name="empty_file_list">업로드된 파일이 없습니다. 메뉴를 눌어 파일을 업로드 해보세요.</string>
-    <string name="empty_search_faq_list">검색된 도움말이 없습니다. 질문하실 내용이 있으시다면 문의하기를 해주세요.</string>
-    <string name="empty_qna_list">질문 내용이 없습니다. 질문하실 내용이 있으시다면 메뉴에서 질문을 보내주세요.</string>
-    <string name="empty_answer_list">확인중에 있습니다. 메일로 회신드리겠습니다.</string>
     
     <!-- 공통 - 다이얼로그 -->
     <string name="common_dialog_confirm">확인</string>

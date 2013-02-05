@@ -11,6 +11,6 @@ public class BaasioConfig {
     public static final String APPLICATION_ID = "PUT_YOUR_APPLICATION_ID";
 
     // GCM(google cloud messaging service) sender ID
-    public static final String GCM_SENDER_ID = null;	
+    public static final String GCM_SENDER_ID = null;
 
 }
