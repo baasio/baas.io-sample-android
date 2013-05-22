@@ -166,6 +166,9 @@ public class BaasioMainActivity extends BaseActivity implements OnPageChangeList
             case R.id.menu_change_password: {
                 EntityDialogFragment fragment = DialogUtils.showEntityDialog(this,
                         "change_password", EntityDialogFragment.CHANGE_PASSWORD);
+
+                unregisterReceiver(mReceiver);
+
                 fragment.setEntityDialogResultListener(new EntityDialogResultListener() {
 
                     @Override
@@ -181,6 +184,10 @@ public class BaasioMainActivity extends BaseActivity implements OnPageChangeList
                                         Toast.makeText(BaasioMainActivity.this,
                                                 "Password changed successfully!", Toast.LENGTH_LONG)
                                                 .show();
+
+                                        IntentFilter filter = new IntentFilter();
+                                        filter.addAction(Baas.ACTION_UNAUTHORIZED);
+                                        registerReceiver(mReceiver, filter);
                                     }
 
                                     @Override
@@ -188,6 +195,10 @@ public class BaasioMainActivity extends BaseActivity implements OnPageChangeList
                                         Toast.makeText(BaasioMainActivity.this,
                                                 "changePasswordInBackground =>" + e.toString(),
                                                 Toast.LENGTH_LONG).show();
+
+                                        IntentFilter filter = new IntentFilter();
+                                        filter.addAction(Baas.ACTION_UNAUTHORIZED);
+                                        registerReceiver(mReceiver, filter);
                                     }
                                 });
                         return false;
