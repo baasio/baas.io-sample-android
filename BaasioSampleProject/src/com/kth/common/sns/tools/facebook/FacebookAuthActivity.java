@@ -7,7 +7,7 @@ import com.facebook.SessionState;
 import com.kth.baasio.callback.BaasioSignInCallback;
 import com.kth.baasio.entity.user.BaasioUser;
 import com.kth.baasio.exception.BaasioException;
-import com.kth.baasio.helpcenter.ui.dialog.DialogUtils;
+import com.kth.baasio.sample.ui.dialog.DialogUtils;
 
 import android.content.Context;
 import android.content.Intent;

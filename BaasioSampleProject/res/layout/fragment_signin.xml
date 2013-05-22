@@ -68,4 +68,13 @@
         android:gravity="top"
         android:text="@string/label_need_signup" />
 
+    <TextView
+        android:id="@+id/textForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:text="@string/label_forgot_password" />
 </LinearLayout>

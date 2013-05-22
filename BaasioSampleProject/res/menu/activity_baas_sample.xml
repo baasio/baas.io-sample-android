@@ -15,4 +15,8 @@
         android:title="@string/menu_signout"
         android:orderInCategory="100"
         android:showAsAction="never" />
+    <item android:id="@+id/menu_change_password"
+        android:title="@string/menu_change_password"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
 </menu>

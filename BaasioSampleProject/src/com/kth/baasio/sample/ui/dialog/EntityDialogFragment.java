@@ -31,6 +31,8 @@ public class EntityDialogFragment extends SherlockDialogFragment {
 
     public static final int MODIFY_COMMENT = 7;
 
+    public static final int CHANGE_PASSWORD = 8;
+
     private int mMode = -1;
 
     private String mText1;
@@ -138,6 +140,13 @@ public class EntityDialogFragment extends SherlockDialogFragment {
                 mTextBody1 = (EditText)mRoot.findViewById(R.id.textInput);
 
                 break;
+            }
+            case CHANGE_PASSWORD: {
+                setTitle(getString(R.string.change_password_dialog_title));
+                mRoot = (ViewGroup)getActivity().getLayoutInflater().inflate(
+                        R.layout.dialog_change_password, null);
+                mTextBody1 = (EditText)mRoot.findViewById(R.id.textInput);
+                mTextBody2 = (EditText)mRoot.findViewById(R.id.textInput2);
             }
             default:
                 break;

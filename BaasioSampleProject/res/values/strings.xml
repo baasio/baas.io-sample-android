@@ -37,6 +37,7 @@
     <string name="label_signup_via_facebook">Facebook으로 가입하기</string>
     <string name="label_signin_via_facebook">Facebook으로 로그인하기</string>
     <string name="label_need_signup">아이디가 없으신가요?</string>
+	<string name="label_forgot_password">비밀번호를 잃어버리셨나요?</string>
     <string name="label_already_signuped">이미 가입하셨나요?</string>
     
     <!-- 메인화면 -->
@@ -93,6 +94,7 @@
     <string name="menu_helpdesk">고객센터</string>
     <string name="menu_signout">로그아웃</string>
     <string name="menu_signin">로그인</string>
+    <string name="menu_change_password">비밀번호변경</string>
     
     <!-- 메뉴 - 사용자 리스트 -->
     <string name="menu_push_send">푸시 전송</string>
@@ -203,4 +205,9 @@
     
     <string name="hint_post_dialog_text1">제목을 입력하세요.</string>
     <string name="hint_post_dialog_text2">게시글을 입력하세요.</string>
+    
+    <string name="change_password_dialog_title">비밀번호변경</string>
+    
+    <string name="hint_change_password_dialog_text1">현재 비밀번호</string>
+    <string name="hint_change_password_dialog_text2">변경할 비밀번호</string>
 </resources>

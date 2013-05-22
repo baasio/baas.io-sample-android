@@ -7,11 +7,16 @@ import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.kth.baasio.Baas;
+import com.kth.baasio.callback.BaasioCallback;
 import com.kth.baasio.entity.user.BaasioUser;
+import com.kth.baasio.exception.BaasioException;
 import com.kth.baasio.helpcenter.ui.HelpCenterActivity;
 import com.kth.baasio.sample.R;
 import com.kth.baasio.sample.ui.BaseActivity;
 import com.kth.baasio.sample.ui.auth.SignInActivity;
+import com.kth.baasio.sample.ui.dialog.DialogUtils;
+import com.kth.baasio.sample.ui.dialog.EntityDialogFragment;
+import com.kth.baasio.sample.ui.dialog.EntityDialogFragment.EntityDialogResultListener;
 import com.kth.baasio.utils.ObjectUtils;
 
 import android.app.Activity;
@@ -118,15 +123,21 @@ public class BaasioMainActivity extends BaseActivity implements OnPageChangeList
         MenuItem signout = menu.findItem(R.id.menu_signout);
         MenuItem signin = menu.findItem(R.id.menu_signin);
 
+        MenuItem changePassword = menu.findItem(R.id.menu_change_password);
+
         if (ObjectUtils.isEmpty(Baas.io().getSignedInUser())) {
             if (!ObjectUtils.isEmpty(signout)) {
                 signout.setVisible(false);
                 signin.setVisible(true);
+
+                changePassword.setVisible(false);
             }
         } else {
             if (!ObjectUtils.isEmpty(signout)) {
                 signout.setVisible(true);
                 signin.setVisible(false);
+
+                changePassword.setVisible(true);
             }
         }
         return super.onPrepareOptionsMenu(menu);
@@ -150,6 +161,38 @@ public class BaasioMainActivity extends BaseActivity implements OnPageChangeList
             }
             case R.id.menu_signout: {
                 BaasioUser.signOut(mContext);
+                break;
+            }
+            case R.id.menu_change_password: {
+                EntityDialogFragment fragment = DialogUtils.showEntityDialog(this,
+                        "change_password", EntityDialogFragment.CHANGE_PASSWORD);
+                fragment.setEntityDialogResultListener(new EntityDialogResultListener() {
+
+                    @Override
+                    public boolean onPositiveButtonSelected(int mode, Bundle data) {
+                        String oldPassword = data.getString("text1");
+                        String newPassword = data.getString("text2");
+
+                        BaasioUser.changePasswordInBackground(oldPassword, newPassword,
+                                new BaasioCallback<Boolean>() {
+
+                                    @Override
+                                    public void onResponse(Boolean response) {
+                                        Toast.makeText(BaasioMainActivity.this,
+                                                "Password changed successfully!", Toast.LENGTH_LONG)
+                                                .show();
+                                    }
+
+                                    @Override
+                                    public void onException(BaasioException e) {
+                                        Toast.makeText(BaasioMainActivity.this,
+                                                "changePasswordInBackground =>" + e.toString(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                        return false;
+                    }
+                });
                 break;
             }
         }

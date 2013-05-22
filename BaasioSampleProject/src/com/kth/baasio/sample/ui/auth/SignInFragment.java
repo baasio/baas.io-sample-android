@@ -12,6 +12,7 @@ import com.kth.common.sns.tools.facebook.FacebookAuthActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,8 @@ public class SignInFragment extends SherlockFragment {
     private TextView mViaFacebook;
 
     private TextView mNeedSignUp;
+
+    private TextView mForgotPassword;
 
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
@@ -141,6 +144,30 @@ public class SignInFragment extends SherlockFragment {
                 Intent intent = new Intent(mContext, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
+
+        mForgotPassword = (TextView)mRootView.findViewById(R.id.textForgotPassword);
+        mForgotPassword.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String email = mEmail.getText().toString().trim();
+
+                Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+                if (!pattern.matcher(email).matches()) {
+                    Toast.makeText(getActivity(),
+                            getActivity().getResources().getString(R.string.error_invalid_email),
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (!ObjectUtils.isEmpty(email)) {
+                    Uri uri = BaasioUser.getResetPasswordUrl(email);
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                }
             }
         });
 
