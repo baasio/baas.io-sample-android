@@ -472,7 +472,7 @@ public class PostDetailFragment extends SherlockFragment implements OnRefreshLis
                 @Override
                 public void onResponse(BaasioEntity response) {
                     // TODO: 본글이랑 연결해야함.
-                    mPost.connectInBackground("write_comment", response,
+                    mPost.connectInBackground("write_comment", response, BaasioEntity.class,
                             new BaasioCallback<BaasioEntity>() {
 
                                 @Override
