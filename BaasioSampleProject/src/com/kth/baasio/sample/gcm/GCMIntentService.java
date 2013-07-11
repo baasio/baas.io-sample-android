@@ -16,21 +16,16 @@
 
 package com.kth.baasio.sample.gcm;
 
-import static com.kth.common.utils.LogUtils.LOGE;
-import static com.kth.common.utils.LogUtils.LOGI;
-import static com.kth.common.utils.LogUtils.LOGW;
-import static com.kth.common.utils.LogUtils.makeLogTag;
-
 import com.google.android.gcm.GCMBaseIntentService;
 import com.kth.baasio.entity.push.BaasioPayload;
 import com.kth.baasio.entity.push.BaasioPush;
 import com.kth.baasio.exception.BaasioException;
 import com.kth.baasio.sample.BaasioConfig;
-import com.kth.baasio.sample.BuildConfig;
 import com.kth.baasio.sample.R;
 import com.kth.baasio.sample.ui.main.BaasioMainActivity;
 import com.kth.baasio.utils.JsonUtils;
 import com.kth.baasio.utils.ObjectUtils;
+import com.kth.common.utils.LogUtils;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -39,19 +34,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
-import java.util.Random;
-
 /**
  * {@link android.app.IntentService} responsible for handling GCM messages.
  */
 public class GCMIntentService extends GCMBaseIntentService {
 
-    private static final String TAG = makeLogTag("GCM");
-
-    private static final int TRIGGER_SYNC_MAX_JITTER_MILLIS = 3 * 60 * 1000; // 3
-                                                                             // minutes
-
-    private static final Random sRandom = new Random();
+    private static final String TAG = LogUtils.makeLogTag("GCM");
 
     public GCMIntentService() {
         super(BaasioConfig.GCM_SENDER_ID);
@@ -59,7 +47,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     @Override
     protected void onRegistered(Context context, String regId) {
-        LOGI(TAG, "Device registered: regId=" + regId);
+        LogUtils.LOGI(TAG, "Device registered: regId=" + regId);
 
         try {
             BaasioPush.register(context, regId);
@@ -71,7 +59,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     @Override
     protected void onUnregistered(Context context, String regId) {
-        LOGI(TAG, "Device unregistered");
+        LogUtils.LOGI(TAG, "Device unregistered");
 
         try {
             BaasioPush.unregister(context);
@@ -85,25 +73,9 @@ public class GCMIntentService extends GCMBaseIntentService {
     protected void onMessage(Context context, Intent intent) {
         String announcement = intent.getStringExtra("message");
         if (announcement != null) {
-            // displayNotification(context, announcement);
             generateNotification(context, announcement);
             return;
         }
-
-        int jitterMillis = (int)(sRandom.nextFloat() * TRIGGER_SYNC_MAX_JITTER_MILLIS);
-        final String debugMessage = "Received message to trigger sync; " + "jitter = "
-                + jitterMillis + "ms";
-        LOGI(TAG, debugMessage);
-
-        if (BuildConfig.DEBUG) {
-            displayNotification(context, debugMessage);
-        }
-
-        generateNotification(context, announcement);
-    }
-
-    private void displayNotification(Context context, String message) {
-        LOGI(TAG, "displayNotification: " + message);
     }
 
     /**
@@ -141,13 +113,13 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     @Override
     public void onError(Context context, String errorId) {
-        LOGE(TAG, "Received error: " + errorId);
+        LogUtils.LOGE(TAG, "Received error: " + errorId);
     }
 
     @Override
     protected boolean onRecoverableError(Context context, String errorId) {
         // log message
-        LOGW(TAG, "Received recoverable error: " + errorId);
+        LogUtils.LOGW(TAG, "Received recoverable error: " + errorId);
         return super.onRecoverableError(context, errorId);
     }
 }
