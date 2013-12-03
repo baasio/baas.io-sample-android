@@ -18,3 +18,30 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-libraryjars libs/android-support-v4.jar
+-libraryjars libs/jackson-core-asl-1.9.1.jar
+-libraryjars libs/jackson-mapper-asl-1.9.1.jar
+-libraryjars libs/slf4j-android-1.6.1-RC1.jar
+-libraryjars libs/spring-android-core-1.0.1.RELEASE.jar
+-libraryjars libs/spring-android-rest-template-1.0.1.RELEASE.jar
+
+# If your project import baas.io SDK via jar, need to add below line
+#-libraryjars libs/baasioandroid.jar
+
+-dontskipnonpubliclibraryclassmembers
+
+-keepattributes *Annotation*,EnclosingMethod,Signature,InnerClasses
+
+-keep class org.codehaus.jackson.** { *; }
+-keep class org.springframework.** { *; }
+-keep class com.kth.baasio.** { *; }
+
+-keepclassmembers class * extends com.actionbarsherlock.ActionBarSherlock {
+    <init>(android.app.Activity, int);
+}
+
+-keep class com.facebook.** { *; }
+
+-dontwarn org.codehaus.jackson.** 
+-dontwarn org.springframework.**
