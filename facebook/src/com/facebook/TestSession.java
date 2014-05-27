@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 Facebook
+ * Copyright 2010-present Facebook.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,7 @@ public class TestSession extends Session {
     private final List<String> requestedPermissions;
     private final Mode mode;
     private String testAccountId;
+    private String testAccountUserName;
 
     private boolean wasAskedToExtendAccessToken;
 
@@ -199,6 +200,16 @@ public class TestSession extends Session {
     public final String getTestUserId() {
         return testAccountId;
     }
+
+    /**
+     * Gets the name of the test user that this TestSession is authenticated as.
+     *
+     * @return the name of the test user
+     */
+    public final String getTestUserName() {
+        return testAccountUserName;
+    }
+
 
     private static synchronized TestSession createTestSession(Activity activity, List<String> permissions, Mode mode,
             String sessionUniqueUserTag) {
@@ -375,6 +386,7 @@ public class TestSession extends Session {
 
     private void finishAuthWithTestAccount(TestAccount testAccount) {
         testAccountId = testAccount.getId();
+        testAccountUserName = testAccount.getName();
 
         AccessToken accessToken = AccessToken.createFromString(testAccount.getAccessToken(), requestedPermissions,
                 AccessTokenSource.TEST_USER);
