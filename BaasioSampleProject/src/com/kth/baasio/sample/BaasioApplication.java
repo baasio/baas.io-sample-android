@@ -1,16 +1,16 @@
 
 package com.kth.baasio.sample;
 
+import com.kakao.GlobalApplication;
 import com.kth.baasio.Baas;
 import com.kth.baasio.callback.BaasioDeviceCallback;
 import com.kth.baasio.entity.push.BaasioDevice;
 import com.kth.baasio.exception.BaasioException;
 import com.kth.common.utils.LogUtils;
 
-import android.app.Application;
 import android.os.AsyncTask;
 
-public class BaasioApplication extends Application {
+public class BaasioApplication extends GlobalApplication {
     private static final String TAG = LogUtils.makeLogTag(BaasioApplication.class);
 
     AsyncTask mGCMRegisterTask;
