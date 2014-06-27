@@ -8,6 +8,7 @@ import com.kth.baasio.exception.BaasioException;
 import com.kth.baasio.sample.R;
 import com.kth.baasio.utils.ObjectUtils;
 import com.kth.common.sns.tools.facebook.FacebookAuthActivity;
+import com.kth.common.sns.tools.kakaotalk.KakaotalkAuthActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -26,11 +27,7 @@ import java.util.regex.Pattern;
 public class SignUpFragment extends SherlockFragment {
     public static final int REQUEST_SIGNUP_VIA_FACEBOOK = 1;
 
-    public static final int REQUEST_SHARE_VIA_FACEBOOK = 2;
-
-    public static final int REQUEST_SIGNUP_VIA_TWITTER = 3;
-
-    public static final int REQUEST_SHARE_VIA_TWITTER = 4;
+    public static final int REQUEST_SIGNUP_VIA_KAKAOTALK = 2;
 
     private Context mContext;
 
@@ -47,6 +44,8 @@ public class SignUpFragment extends SherlockFragment {
     private Button mConfirm;
 
     private TextView mViaFacebook;
+
+    private TextView mViaKakaotalk;
 
     private TextView mAlreadySignUped;
 
@@ -145,9 +144,17 @@ public class SignUpFragment extends SherlockFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, FacebookAuthActivity.class);
-                intent.putExtra(FacebookAuthActivity.INTENT_REQUEST_CODE,
-                        FacebookAuthActivity.REQUEST_MODE_SIGNUP_VIA_FACEBOOK);
                 startActivityForResult(intent, REQUEST_SIGNUP_VIA_FACEBOOK);
+            }
+        });
+
+        mViaKakaotalk = (TextView)mRootView.findViewById(R.id.textViaKakaotalk);
+        mViaKakaotalk.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, KakaotalkAuthActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNUP_VIA_KAKAOTALK);
             }
         });
 
@@ -169,27 +176,18 @@ public class SignUpFragment extends SherlockFragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_SIGNUP_VIA_TWITTER
+            if (requestCode == REQUEST_SIGNUP_VIA_KAKAOTALK
                     || requestCode == REQUEST_SIGNUP_VIA_FACEBOOK) {
 
                 getActivity().setResult(Activity.RESULT_OK);
                 getActivity().finish();
-
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
-            if (requestCode == REQUEST_SIGNUP_VIA_TWITTER
-                    || requestCode == REQUEST_SIGNUP_VIA_FACEBOOK) {
-                if (!ObjectUtils.isEmpty(data)) {
-                    String error = data.getStringExtra(FacebookAuthActivity.INTENT_RESULT_ERROR);
-                    if (!ObjectUtils.isEmpty(error)) {
-                        Toast.makeText(getActivity(),
-                                getString(R.string.error_signup_facebook) + " : " + error,
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-
+            if (requestCode == REQUEST_SIGNUP_VIA_FACEBOOK) {
                 Toast.makeText(getActivity(), getString(R.string.error_signup_facebook),
+                        Toast.LENGTH_LONG).show();
+            } else if (requestCode == REQUEST_SIGNUP_VIA_KAKAOTALK) {
+                Toast.makeText(getActivity(), getString(R.string.error_signup_kakaotalk),
                         Toast.LENGTH_LONG).show();
             }
         }

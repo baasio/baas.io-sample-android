@@ -83,6 +83,17 @@
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="@string/label_signup_via_facebook" />
+    
+    <TextView
+        android:id="@+id/textViaKakaotalk"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="5"
+        android:drawableLeft="@drawable/kakaotalkicon_20"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/label_signup_via_kakaotalk" />
 
     <TextView
         android:id="@+id/textAlreadySignUped"

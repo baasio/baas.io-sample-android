@@ -7,6 +7,7 @@
     <!-- 화면 제목 -->
     <string name="title_activity_baas_sample">baas.io 샘플</string>
     <string name="title_activity_facebook_sample">Facebook</string>
+    <string name="title_activity_kakaotalk_sample">Kakaotalk</string>
     <string name="title_activity_userdeail">사용자 상세보기</string>
     <string name="title_activity_userdeail_list">사용자 상세리스트 보기</string>
     <string name="title_activity_signup">가입</string>
@@ -27,6 +28,9 @@
     <string name="error_signin_facebook">Facebook 로그인에 실패하였습니다.</string>
     <string name="error_signup_facebook">Facebook 가입에 실패하였습니다.</string>
     
+    <string name="error_signin_kakaotalk">Kakaotalk 로그인에 실패하였습니다.</string>
+    <string name="error_signup_kakaotalk">Kakaotalk 가입에 실패하였습니다.</string>
+    
     <string name="msg_signin_success">로그인 되었습니다.</string>
     <string name="msg_signup_success">가입에 성공하셨습니다.</string>
     
@@ -36,6 +40,8 @@
     <string name="hint_name">이름</string>
     <string name="label_signup_via_facebook">Facebook으로 가입하기</string>
     <string name="label_signin_via_facebook">Facebook으로 로그인하기</string>
+    <string name="label_signup_via_kakaotalk">Kakaotalk으로 가입하기</string>
+    <string name="label_signin_via_kakaotalk">Kakaotalk으로 로그인하기</string>
     <string name="label_need_signup">아이디가 없으신가요?</string>
 	<string name="label_forgot_password">비밀번호를 잃어버리셨나요?</string>
     <string name="label_already_signuped">이미 가입하셨나요?</string>
@@ -210,4 +216,7 @@
     
     <string name="hint_change_password_dialog_text1">현재 비밀번호</string>
     <string name="hint_change_password_dialog_text2">변경할 비밀번호</string>
+    
+    <!-- 카카오톡 -->
+    <string name="kakao_app_key">PUT_YOUR_KAKAOTALK_APP_KEY</string>
 </resources>

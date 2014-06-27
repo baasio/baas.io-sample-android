@@ -57,15 +57,25 @@
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="@string/label_signin_via_facebook" />
-
+    
+    <TextView
+        android:id="@+id/textViaKakaotalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/kakaotalkicon_20"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/label_signin_via_kakaotalk" />
+    
     <TextView
         android:id="@+id/textNeedSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:gravity="top"
+        android:gravity="center_vertical"
         android:text="@string/label_need_signup" />
 
     <TextView
@@ -73,8 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:gravity="top"
+        android:gravity="center_vertical"
         android:text="@string/label_forgot_password" />
 </LinearLayout>
