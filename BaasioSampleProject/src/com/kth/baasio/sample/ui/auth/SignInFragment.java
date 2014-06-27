@@ -8,6 +8,7 @@ import com.kth.baasio.exception.BaasioException;
 import com.kth.baasio.sample.R;
 import com.kth.baasio.utils.ObjectUtils;
 import com.kth.common.sns.tools.facebook.FacebookAuthActivity;
+import com.kth.common.sns.tools.kakaotalk.KakaotalkAuthActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,11 +30,7 @@ public class SignInFragment extends SherlockFragment {
 
     public static final int REQUEST_SIGNIN_VIA_FACEBOOK = 2;
 
-    public static final int REQUEST_SHARE_VIA_FACEBOOK = 3;
-
-    public static final int REQUEST_SIGNIN_VIA_TWITTER = 4;
-
-    public static final int REQUEST_SHARE_VIA_TWITTER = 5;
+    public static final int REQUEST_SIGNIN_VIA_KAKAOTALK = 3;
 
     // private Fragment mFragment;
 
@@ -49,6 +46,8 @@ public class SignInFragment extends SherlockFragment {
 
     private TextView mViaFacebook;
 
+    private TextView mViaKakaotalk;
+
     private TextView mNeedSignUp;
 
     private TextView mForgotPassword;
@@ -56,6 +55,8 @@ public class SignInFragment extends SherlockFragment {
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     public static final String INTENT_EMAIL_INFO = "email";
+
+    public static final String INTENT_KAKAOTALK_INFO = "kakaotalk";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,9 +131,21 @@ public class SignInFragment extends SherlockFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, FacebookAuthActivity.class);
-                intent.putExtra(FacebookAuthActivity.INTENT_REQUEST_CODE,
-                        FacebookAuthActivity.REQUEST_MODE_SIGNIN_VIA_FACEBOOK);
                 startActivityForResult(intent, REQUEST_SIGNIN_VIA_FACEBOOK);
+            }
+        });
+
+        mViaKakaotalk = (TextView)mRootView.findViewById(R.id.textViaKakaotalk);
+        mViaKakaotalk.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Intent intent = new Intent(mContext,
+                // KakaotalkAuthActivity.class);
+                // startActivityForResult(intent, REQUEST_SIGNIN_VIA_KAKAOTALK);
+
+                Intent intent = new Intent(mContext, KakaotalkAuthActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNIN_VIA_KAKAOTALK);
             }
         });
 
@@ -188,8 +201,8 @@ public class SignInFragment extends SherlockFragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_SIGNIN_VIA_TWITTER
-                    || requestCode == REQUEST_SIGNIN_VIA_FACEBOOK) {
+            if (requestCode == REQUEST_SIGNIN_VIA_FACEBOOK
+                    || requestCode == REQUEST_SIGNIN_VIA_KAKAOTALK) {
 
                 getActivity().setResult(Activity.RESULT_OK);
                 getActivity().finish();
@@ -206,19 +219,11 @@ public class SignInFragment extends SherlockFragment {
                 }
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
-            if (requestCode == REQUEST_SIGNIN_VIA_TWITTER
-                    || requestCode == REQUEST_SIGNIN_VIA_FACEBOOK) {
-                if (!ObjectUtils.isEmpty(data)) {
-                    String error = data.getStringExtra(FacebookAuthActivity.INTENT_RESULT_ERROR);
-                    if (!ObjectUtils.isEmpty(error)) {
-                        Toast.makeText(getActivity(),
-                                getString(R.string.error_signin_facebook) + " : " + error,
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-
+            if (requestCode == REQUEST_SIGNIN_VIA_FACEBOOK) {
                 Toast.makeText(getActivity(), getString(R.string.error_signin_facebook),
+                        Toast.LENGTH_LONG).show();
+            } else if (requestCode == REQUEST_SIGNIN_VIA_KAKAOTALK) {
+                Toast.makeText(getActivity(), getString(R.string.error_signin_kakaotalk),
                         Toast.LENGTH_LONG).show();
             }
         }

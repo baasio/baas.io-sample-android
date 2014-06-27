@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnKeyListener;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 
 public class ProgressDialogFragment extends DialogFragment {
@@ -102,5 +103,12 @@ public class ProgressDialogFragment extends DialogFragment {
 
     public void setDialogResultListener(DialogResultListener listener) {
         mListener = listener;
+    }
+
+    @Override
+    public int show(FragmentTransaction transaction, String tag) {
+        transaction.add(this, tag);
+
+        return transaction.commitAllowingStateLoss();
     }
 }
