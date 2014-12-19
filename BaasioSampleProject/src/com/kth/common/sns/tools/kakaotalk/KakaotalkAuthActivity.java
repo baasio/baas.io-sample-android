@@ -18,6 +18,11 @@
 
 package com.kth.common.sns.tools.kakaotalk;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+
+import com.kakao.AuthType;
 import com.kakao.Session;
 import com.kakao.SessionCallback;
 import com.kakao.exception.KakaoException;
@@ -27,10 +32,7 @@ import com.kth.baasio.entity.user.BaasioUser;
 import com.kth.baasio.exception.BaasioException;
 import com.kth.baasio.sample.ui.dialog.DialogUtils;
 import com.kth.baasio.utils.ObjectUtils;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import com.kth.common.utils.LogUtils;
 
 /**
  * 샘플에서 사용하게 될 로그인 페이지 세션을 오픈한 후 action을 override해서 사용한다.
@@ -78,7 +80,7 @@ public class KakaotalkAuthActivity extends FragmentActivity {
             DialogUtils.showProgressDialog(KakaotalkAuthActivity.this, "kakaotalk_login",
                     "로그인 중입니다.");
 
-            Session.getCurrentSession().open(mySessionCallback);
+            Session.getCurrentSession().open(AuthType.KAKAO_ACCOUNT);
         }
     }
 
@@ -99,6 +101,7 @@ public class KakaotalkAuthActivity extends FragmentActivity {
          */
         @Override
         public void onSessionClosed(final KakaoException exception) {
+            LogUtils.LOGE(_TAG, exception.toString());
             // 프로그레스바를 보이고 있었다면 중지하고 세션 오픈을 못했으니 다시 로그인 버튼 노출.
             DialogUtils.dissmissProgressDialog(KakaotalkAuthActivity.this, "kakaotalk_login");
         }

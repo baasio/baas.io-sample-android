@@ -74,7 +74,7 @@ public class EntityDialogFragment extends SherlockDialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        setStyle(SherlockDialogFragment.STYLE_NORMAL, R.style.Theme_Sherlock_Light_Dialog);
+        setStyle(SherlockDialogFragment.STYLE_NORMAL, android.R.style.Theme_Dialog);
 
         switch (mMode) {
             case CREATE_ENTITY: {

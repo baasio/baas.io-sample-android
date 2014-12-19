@@ -45,7 +45,7 @@ public class ShareDialogFragment extends SherlockDialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        setStyle(SherlockDialogFragment.STYLE_NORMAL, R.style.Theme_Sherlock_Light_Dialog);
+        setStyle(SherlockDialogFragment.STYLE_NORMAL, android.R.style.Theme_Dialog);
 
         mTextBody = new EditText(getActivity());
         mTextBody.setHint(R.string.share_dialog_body_hint);

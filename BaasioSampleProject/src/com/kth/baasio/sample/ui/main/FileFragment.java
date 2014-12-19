@@ -1,8 +1,26 @@
 
 package com.kth.baasio.sample.ui.main;
 
-import static com.kth.common.utils.LogUtils.LOGV;
-import static com.kth.common.utils.LogUtils.makeLogTag;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuItem;
@@ -29,32 +47,11 @@ import com.kth.baasio.sample.utils.actionmodecompat.ActionMode.Callback;
 import com.kth.baasio.utils.ObjectUtils;
 import com.kth.common.utils.LogUtils;
 
-import org.codehaus.jackson.JsonNode;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.kth.common.utils.LogUtils.LOGV;
+import static com.kth.common.utils.LogUtils.makeLogTag;
 
 public class FileFragment extends SherlockFragment implements OnRefreshListener, Callback {
 
@@ -316,14 +313,7 @@ public class FileFragment extends SherlockFragment implements OnRefreshListener,
                 return;
             }
 
-            final String srcFilePath;
-            try {
-                srcFilePath = FileUtils.getPath(getActivity(), contentUri);
-            } catch (URISyntaxException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                return;
-            }
+            final String srcFilePath = FileUtils.getPath(getActivity(), contentUri);
 
             if (requestCode == REQUEST_FILE_FOR_CREATE) {
                 new Handler().postDelayed(new Runnable() {
