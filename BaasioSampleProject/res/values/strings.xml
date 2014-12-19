@@ -2,7 +2,7 @@
     <string name="app_name">baas.io</string>
     
     <!-- Facebook app_id -->
-    <string name="app_id">510355658975579</string>
+    <string name="app_id">PUT_YOUR_FACEBOOK_APP_ID</string>
         
     <!-- 화면 제목 -->
     <string name="title_activity_baas_sample">baas.io 샘플</string>
@@ -218,5 +218,5 @@
     <string name="hint_change_password_dialog_text2">변경할 비밀번호</string>
     
     <!-- 카카오톡 -->
-    <string name="kakao_app_key">6b19c0eaeb8db11cea4f4c2fa7c58051</string>
+    <string name="kakao_app_key">PUT_YOUR_KAKAOTALK_APP_KEY</string>
 </resources>
